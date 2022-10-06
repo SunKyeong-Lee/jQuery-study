@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_jquery 기본</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 id="title">안녕하세요</h1>
+    <ul id="list">
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+        <li>네번째</li>
+        <li>다섯번째</li>
+    </ul>
+    <input type="text" id="name">
+
+    <script>
+        // 제이쿼리 문법
+        // remove() 메소드 : window.onload() = function() {};와 유사
+        $(document).ready( function() {
+                console.log("실행되었습니다");
+        });
+
+        $( ()=>console.log("제이쿼리로 실행하고 있습니다") );
+
+        // 이벤트 메소드
+        // document.querySelector(),addEventListener("이벤트 타입", 함수);
+        $('#title').on("click", function() {
+            console.log("타이틀을 눌렀습니다");
+        });
+
+        // 제이쿼리 선택자 - 요소의 선택
+        // css와 동일한 선택자를 통해 접근 가능
+        console.log($('#list li:eq(1)'));  // 두번째
+        console.log($('#list li:gt(0)'));
+        console.log($('#list li:lt(0)'));
+        console.log($('#list li:first'));
+
+        // 제이쿼리 메소드 - 선택된 요소에 접근 : getter메소드와 setter 메소드 
+        // 요소의 속성 값을 메소드를 통해 가져온다.
+        const title = $('#title');
+        console.log(title.html());
+        title.html("원하는 값으로 수정합니다"); 
+
+        // setter 뒤에 setter(값 수정하는 메소드)를 계속해서 연결할 수 있다.
+        $('#name').val("값을 넣어줄 수 있습니다").attr('style', 'color:red');
+
+        // 요소 생성 추가
+        const pTag = $('<div>').append($('<p>').html("추가된 내용입니다"));
+        $('body').append(pTag);
+
+        $('#list li:eq(2)').remove();    // 요소 삭제
+        $('body').append(pTag.clone());  // 요소 복제
+
+        // 요소의 탐색
+        let li = $('#list li:first');
+        console.log(li.parent());  // ul
+        console.log(li.parents()); // ul, body, html
+        console.log(li.parents()[2]);  // html
+        
+        console.log(li.siblings());  // 다른 li 전부
+        console.log(li.next());  // 두번째
+        console.log(li.prev());
+        console.log(li.next().prev());  // 첫번째
+        
+        let list = $('#list');
+        console.log(list.find('li'));  // 모든 li
+        console.log(list.find('li:eq(1)'));  // 두번째
+
+        console.log(list.children().filter(':odd'));  // 인덱스가 홀수인 요소만을 선택
+    </script>
+</body>
+</html>
