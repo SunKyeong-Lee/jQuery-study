@@ -1,0 +1,44 @@
+body {background-color: lightgrey;}
+img {object-fit: cover;}
+
+.single-item-wrap div {
+  background-color: whitesmoke;
+  padding-bottom: 1px;
+}
+
+.single-item-wrap, 
+.center-item-wrap {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.single-item, 
+.center-item {
+  width: 90%;
+}
+
+.single-item img {
+  width: 100%;
+  height: 200px;
+}
+
+.center-item img {
+  width: 240px;
+  height: 160px;
+}
+
+.center-item .slick-prev:before {
+    content: '◀';
+}
+
+.center-item .slick-next:before {
+    content: '▶';
+}
+
+.center-item .slick-prev:before,
+.center-item .slick-next:before {
+    opacity: .75;
+    color: black;
+}

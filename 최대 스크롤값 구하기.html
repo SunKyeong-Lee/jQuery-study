@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     /* 스크롤을 만들기 위해 너비와 높이가 있는 css 추가 */
+    .lorem-ipsum {
+      width: 1000px;
+      height: 3000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="lorem-ipsum">
+    <p>Lorem ipsum dolor sit amet, decore posidonium no qui, ex veritus propriae sit. Et eos discere disputando, sit at duis neglegentur. Eros facete corrumpit vim ei. Est nibh maluisset ex, graece accusam vituperata vix at. Nam lorem tibique et, mea ne vide tempor putant, ius dolore deleniti salutatus id. Vero quaeque fastidii eam no, id mei quem indoctum convenire, te mundi possim appetere eam.</p><br>
+
+    <p>Ullum maiorum concludaturque sea ad, mazim melius tractatos vix an, id cum illum eligendi. Sed duis sententiae inciderint at. Facer interpretaris cu sed, at quo veritus fabellas gloriatur. Illud congue usu no, iudico putant consequat ex per, mel doctus impetus docendi at.</p><br>
+
+    <p>Ea duo quem nullam blandit, id mucius aperiri ius. At sale posidonium per. Agam deterruisset pro ad, ubique invenire scripserit has at, nam no tale simul. Ei dicat causae eam, mei novum ponderum deterruisset ad. Id qui viris integre consequuntur.</p><br>
+
+    <p>Pro eu harum doming facete, per no iriure bonorum salutandi. Posse eruditi invenire est et, sit ut vivendum nominati prodesset, amet autem in per. Salutatus deseruisse reprimique cu eum. Pri ut sumo paulo, est malis omnesque euripidis ei, has eros iriure consulatu et.</p><br>
+
+    <p>Et bonorum disputationi qui. Ubique regione ad mea, ut ferri ullum sed. Ei tantas iuvaret splendide pri, eu choro consequuntur has. Vix cu quodsi regione, sonet delicatissimi eu vix.</p><br>
+
+    <p>Ad impedit singulis inciderint his, no sit case facilis. His principes adolescens ex. An aperiam eleifend eum, nec ignota tractatos quaerendum an, virtute fierent ex quo. Eum ex modo latine.</p><br>
+
+    <p>Utinam fabulas cu nec, ne vis eripuit ancillae lucilius. At tantas impetus recteque nam. Convenire similique appellantur no mel, eum omnis nulla ut, an purto impetus ius. Nostro euismod eos ad, eu nibh discere voluptatum mel, vix instructior intellegebat ne. Quo ut graece dicunt signiferumque. Per oportere reformidans ad, sed ex maiestatis honestatis vituperatoribus, vix natum graeci oportere ut.</p><br>
+
+    <p>Et duo mazim errem gloriatur, ex legere assueverit his, no nullam referrentur his. Tollit deterruisset at his, ea ius elit menandri maluisset. Vix cu tota tollit, nibh menandri mandamus id eos. Ut vim viderer veritus explicari, diam facilis detracto ea eum.</p><br>
+
+    <p>Ad quo omnes luptatum, eum docendi maluisset ad, ut vim elit noster epicurei. An dicant postea cetero eos, sed id vitae vidisse minimum, cibo dolor expetenda quo eu. In eam abhorreant voluptatum. In mei ullum laboramus complectitur, sit id modo probo elaboraret, nec facilisi corrumpit forensibus an.</p><br>
+
+    <p>Nam nonumes atomorum inciderint eu, nec viris assueverit ei. Pri dicat splendide ex, nulla quaeque ne has, eam intellegam dissentias eu. Eu usu lorem doctus suscipiantur. Sit omnes elaboraret et. Adipisci suscipiantur vim ut. In dico ridens invidunt duo, vim cu porro consulatu efficiendi.</p>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      // 수직 스크롤값
+      let curreY = document.documentElement.scrollTop;
+      console.log('스크롤 높이 : ' + curreY);
+      // 수평 스크롤값
+      let curreX = document.documentElement.scrollLeft;
+      console.log('스크롤 너비 : ' + curreX);
+      
+    })
+    
+    // clientHgith : 현재 보여지는 요소의 높이값
+    // scrollHeight : 스크롤되는 부분을 포함한 실제 요소의 높이값
+    // 최대 스크롤값(전체 높이) = scrollHeight - clientHeight
+    let totalY = document.documentElement.scrollHeight
+                  - document.documentElement.clientHeight;
+    console.log(totalY);
+  </script>
+</body>
+</html>
