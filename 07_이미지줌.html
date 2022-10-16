@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이미지줌</title>
+
+  <!-- 팝업 css 파일 -->
+  <link rel="stylesheet" href="./magnific/magnific-popup.css" />
+  <link rel="stylesheet" href="./css/magnific-style.css" />
+  <!-- 제이쿼리 cdn -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!-- 팝업 js 파일 -->
+  <script src="./magnific/jquery.magnific-popup.js"></script>
+  <script src="./magnific/jquery.magnific-popup.min.js"></script>
+</head>
+<body>
+  <h1>Single image lightbox</h1>
+  <!-- 
+    a herf : 원본사진을 띄울 주소
+    class : 제이쿼리 연결을 위한 클래스네임 지정
+    title : 이미지 원본 밑에 나타나는 제목
+  -->
+  <a class="image-popup-vertical-fit" href="./img/back0.jpg" title="example 01">
+    <!-- 화면에 보이는 작은 이미지 -->
+    <img src="./img/back0.jpg" alt="01">
+  </a>
+  <a class="image-popup-fit-width" href="./img/back1.jpg" title="example 02">
+    <img src="./img/back1.jpg" alt="02">
+  </a>
+  <a class="image-popup-no-margins" href="./img/back2.jpg">
+    <img src="./img/back2.jpg" alt="03">
+  </a>
+
+  <script>
+    $(document).ready(function() {
+
+      $('.image-popup-vertical-fit').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+          verticalFit: true
+        }
+        
+      });
+
+      $('.image-popup-fit-width').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        image: {
+          verticalFit: false
+        }
+      });
+
+      $('.image-popup-no-margins').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        image: {
+          verticalFit: true
+        },
+        zoom: {
+          enabled: true,
+          duration: 300 // don't forget to change the duration also in CSS
+        }
+      });
+
+    });
+  </script>
+</body>
+</html>
